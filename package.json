@@ -1,0 +1,19 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "social network api to share thought, react to thoughts, and creaste a friends list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NabhahnK/social-network-API.git"
+  },
+  "author": "NabhahnK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NabhahnK/social-network-API/issues"
+  },
+  "homepage": "https://github.com/NabhahnK/social-network-API#readme"
+}
