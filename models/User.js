@@ -30,12 +30,12 @@ const userSchema = new Schema(
         //         ref: 'Thought',
         //     },
         // ],
-        // friends: [
-        //     {
-        //         type: Schema.Types.ObjectId,
-        //         ref: 'User',
-        //     },
-        // ],
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User',
+            },
+        ],
     },
     {
         toJSON: {
@@ -46,12 +46,12 @@ const userSchema = new Schema(
 );
 
 // Create a virtual property `friendCount` that gets and sets the user's full name
-// userSchema
-//     .virtual('friendCount')
-//     // Getter
-//     .get(function () {
-//         return `${this.friends.length}`;
-//     })
+userSchema
+    .virtual('friendCount')
+    // Getter
+    .get(function () {
+        return `${this.friends.length}`;
+    })
 
 // Initialize our User model
 const User = model('user', userSchema);
