@@ -24,12 +24,12 @@ const userSchema = new Schema(
                 "Please fill a valid email address",
             ],
         },
-        // thoughts: [
-        //     {
-        //         type: Schema.Types.ObjectId,
-        //         ref: 'Thought',
-        //     },
-        // ],
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought',
+            },
+        ],
         friends: [
             {
                 type: Schema.Types.ObjectId,
