@@ -18,9 +18,8 @@ connection.once('open', async () => {
   for (let i = 0; i < 3; i++) {
     const thoughtText = getRandomText();
     const username = getRandomName();
-    _id = i;
+  
     thoughts.push({
-      _id,
       thoughtText,
       username
     });
@@ -36,7 +35,6 @@ connection.once('open', async () => {
     users.push({
       username,
       email,
-      thoughts
     });
   }
 
