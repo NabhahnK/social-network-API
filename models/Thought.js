@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-// const reactionSchema = require('./Reaction');
+const reactionSchema = require('./Reaction');
 
 const thoughtSchema = new Schema(
     {
@@ -17,7 +17,7 @@ const thoughtSchema = new Schema(
             default: Date.now,
             get: format
         },
-        // reactions: [reactionSchema],
+        reactions: [reactionSchema],
     },
     {
         toJSON: {
@@ -28,12 +28,12 @@ const thoughtSchema = new Schema(
 );
 
 // Create a virtual property `tagCount` that gets the amount of comments per user
-// postSchema
-//     .virtual('reactionsCount')
-//     // Getter
-//     .get(function () {
-//         return this.reactions.length;
-//     });
+thoughtSchema
+    .virtual('reactionsCount')
+    // Getter
+    .get(function () {
+        return this.reactions.length;
+    });
 
 function format(date) {
     sDate = new Date(date);
