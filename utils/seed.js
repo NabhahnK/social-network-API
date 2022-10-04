@@ -17,10 +17,11 @@ connection.once('open', async () => {
 
   for (let i = 0; i < 3; i++) {
     const thoughtText = getRandomText();
-    console.log(thoughtText);
-    console.log('hello');
+    const username = getRandomName();
+
     thoughts.push({
-      thoughtText
+      thoughtText,
+      username
     });
   }
 

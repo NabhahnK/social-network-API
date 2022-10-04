@@ -8,10 +8,10 @@ const thoughtSchema = new Schema(
             required: true,
             maxlength: 280,
         },
-        // username: {
-        //     type: String,
-        //     required: true,
-        // },
+        username: {
+            type: String,
+            required: true,
+        },
         createdAt: {
             type: Date,
             default: Date.now,
@@ -26,6 +26,14 @@ const thoughtSchema = new Schema(
         id: false,
     }
 );
+
+// Create a virtual property `tagCount` that gets the amount of comments per user
+// postSchema
+//     .virtual('reactionsCount')
+//     // Getter
+//     .get(function () {
+//         return this.reactions.length;
+//     });
 
 function format(date) {
     sDate = new Date(date);
