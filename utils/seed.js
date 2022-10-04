@@ -1,18 +1,30 @@
 const connection = require('../config/connection');
 const User = require('../models/User');
-const { getRandomName, getRandomEmails } = require('./data');
+const Thought = require('../models/Thought');
+const { getRandomName, getRandomEmails, getRandomText } = require('./data');
 
 connection.on('error', (err) => err);
-
-console.log("hello");
 
 connection.once('open', async () => {
   console.log('connected');
   // await Application.deleteMany({});
   await User.deleteMany({});
+  await Thought.deleteMany({});
 
   const users = [];
   // const applications = getRandomApplications(10);
+  const thoughts = [];
+
+  for (let i = 0; i < 3; i++) {
+    const thoughtText = getRandomText();
+    console.log(thoughtText);
+    console.log('hello');
+    thoughts.push({
+      thoughtText
+    });
+  }
+
+  await Thought.collection.insertMany(thoughts);
 
   for (let i = 0; i < 20; i++) {
     const username = getRandomName();

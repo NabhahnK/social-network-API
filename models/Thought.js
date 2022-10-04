@@ -1,23 +1,23 @@
-const { Schema, Types } = require('mongoose');
-const reactionSchema = require('./Reaction');
+const { Schema, model } = require('mongoose');
+// const reactionSchema = require('./Reaction');
 
-const responseSchema = new Schema(
+const thoughtSchema = new Schema(
     {
         thoughtText: {
             type: String,
             required: true,
             maxlength: 280,
         },
-        username: {
-            type: String,
-            required: true,
-        },
+        // username: {
+        //     type: String,
+        //     required: true,
+        // },
         createdAt: {
             type: Date,
             default: Date.now,
             get: format
         },
-        reactions: [reactionSchema],
+        // reactions: [reactionSchema],
     },
     {
         toJSON: {
@@ -32,4 +32,7 @@ function format(date) {
     return sDate.getFullYear();
 }
 
-module.exports = responseSchema;
+// Initialize our Thought model
+const Thought = model('thought', thoughtSchema);
+
+module.exports = Thought;

@@ -82,7 +82,11 @@ const email = [
   'Coollastname@gmail.com',
 ];
 
-const users = [];
+const thoughtText = [
+  'bob',
+  'sam',
+  'tam'
+]
 
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -96,5 +100,9 @@ const getRandomEmails = (int) => {
   return getRandomArrItem(email);
 };
 
+const getRandomText = () => {
+  return getRandomArrItem(thoughtText);
+}
+
 // Export the functions for use in seed.js
-module.exports = { getRandomName, getRandomEmails };
+module.exports = { getRandomName, getRandomEmails, getRandomText };
